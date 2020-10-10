@@ -17,6 +17,7 @@ func main() {
 <html>
 <body>
 <h2>Hello `+ v +` the Prathap and Akhila are in love and fight only:) </h2>
+<h2>Its normal to see people yell at you </h2>
 <h1>The curent server time is 
 <%
          Date date = new Date();
