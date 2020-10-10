@@ -1,7 +1,7 @@
 pipeline {
   environment {
-    registry = “prathap363/docker-test"
-    registryCredential = 'prathap363’
+    registry = "prathap363/docker-test"
+    registryCredential = 'prathap363'
     dockerImage = ''
   }
   tools {
