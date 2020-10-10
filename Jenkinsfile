@@ -42,7 +42,9 @@ pipeline {
     stage('Building codebase') {
       steps{
         script {
-          sshPublisher(publishers: [sshPublisherDesc(configName: 'sshfordeploy', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'cd /home/cloud_user/test && ./script.sh', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/home/cloud_user/test', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'index.jsp')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+         // sshPublisher(publishers: [sshPublisherDesc(configName: 'sshfordeploy', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'cd /home/cloud_user/test && ./script.sh', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/home/cloud_user/test', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'index.jsp')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+          sshPublisher(publishers: [sshPublisherDesc(configName: 'sshfordeploy', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'cd /home/cloud_user/test && ./script.sh', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/home/cloud_user/test', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'index.html')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+
         }
       }
     }
