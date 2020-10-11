@@ -9,14 +9,14 @@ pipeline {
       // Install the Maven version configured as "M3" and add it to the path.
       maven "M363"
   }
-  agent any
-  // agent {
-  //   docker {
-  //       image 'maven:3.6.0-jdk-13'
-  //       label 'docker-master'
-  //       args "-v /tmp/maven:/home/jenkins/.m2:z -e MAVEN_CONFIG=/home/jenkins/.m2"
-  //   }
-  // }
+  //agent any
+   agent {
+    docker {
+        image 'maven:3.6.0-jdk-13'
+        label 'docker-master'
+        args "-v /tmp/maven:/home/jenkins/.m2:z -e MAVEN_CONFIG=/home/jenkins/.m2"
+    }
+  }
   stages {
    stage('parameterize'){
      steps {
@@ -33,6 +33,7 @@ pipeline {
     stage('Building code') {
       steps{
         script {
+                sh 'whoami'
                 sh "mvn -version"
                 sh "mvn clean install"
          // sh "mvn -Dmaven.test.failure.ignore=true clean package"
