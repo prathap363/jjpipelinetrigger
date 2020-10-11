@@ -11,6 +11,7 @@ pipeline {
         image 'maven:3.6.0-jdk-13'
         label 'docker-master'
        // args "-v /tmp/maven:/home/jenkins/.m2:z -e MAVEN_CONFIG=/home/jenkins/.m2"
+         args "-u root"
     }
   }
   stages {
