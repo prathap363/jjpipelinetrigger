@@ -31,7 +31,9 @@ pipeline {
     stage('Building code') {
       steps{
         script {
-          sh "mvn -Dmaven.test.failure.ignore=true clean package"
+          sh 'mvn --version'
+          sh 'mvn clean package':
+         // sh "mvn -Dmaven.test.failure.ignore=true clean package"
           sh 'bin/makeindex' 
         }
       }
