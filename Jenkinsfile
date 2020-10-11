@@ -8,7 +8,13 @@ pipeline {
       // Install the Maven version configured as "M3" and add it to the path.
       maven "M363"
   }
-  agent any
+  agent {
+    docker {
+        image 'ubuntu:latest'
+        label 'docker-master'
+        args  '-v /tmp:/tmp'
+    }
+  }
   stages {
    stage('parameterize'){
      steps {
