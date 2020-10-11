@@ -3,6 +3,7 @@ pipeline {
     registry = "prathap363/docker-test-training1"
     registryCredential = 'dockerhub-prathap363'
     dockerImage = ''
+    JAVA_TOOL_OPTIONS = "-Duser.home=/home/jenkins"
   }
   tools {
       // Install the Maven version configured as "M3" and add it to the path.
@@ -10,7 +11,7 @@ pipeline {
   }
   agent {
     docker {
-        image 'maven:3-alpine'
+        image 'maven:3.6.0-jdk-13'
         label 'docker-master'
         args  '-v /tmp:/tmp'
     }
