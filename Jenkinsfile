@@ -29,7 +29,6 @@ pipeline {
     stage('Building code') {
       steps{
         script {
-                sh 'whoami'
                 sh "mvn -version"
                 sh "mvn clean install"
          // sh "mvn -Dmaven.test.failure.ignore=true clean package"
